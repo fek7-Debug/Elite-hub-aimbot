@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Hub | Universal Aimbot</title>
+    <title>Elite Hub V6 | Universal Aimbot</title>
     <style>
         body {
             background-color: #050505;
@@ -12,12 +12,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Fondo con puntos de luz */
         .bg-dots {
             position: absolute;
             width: 100%; height: 100%;
@@ -28,7 +27,7 @@
 
         .main-container {
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             background: #0d0d0d;
             border: 1px solid #1f1f1f;
             border-radius: 30px;
@@ -39,62 +38,75 @@
         }
 
         .logo-area {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #ff0000, #550000);
-            border-radius: 20px;
+            border-radius: 18px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
-            color: #fff;
         }
 
         h1 {
             font-size: 1.8rem;
-            margin: 10px 0;
+            margin: 5px 0;
             font-weight: 800;
-            letter-spacing: -1px;
         }
 
-        .description {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.7rem;
+            color: #444;
         }
 
-        /* Caja de Script Estilo Moderno */
+        .description-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+        }
+
+        .lang-col {
+            border-right: 1px solid #222;
+            padding-right: 10px;
+        }
+
+        .lang-col:last-child {
+            border-right: none;
+            padding-left: 5px;
+        }
+
+        h3 { font-size: 0.8rem; color: #ff0000; margin: 0 0 5px 0; text-transform: uppercase; }
+        p { font-size: 0.75rem; color: #888; margin: 0; line-height: 1.3; }
+
         .script-box {
             background: #000;
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 25px;
             border: 1px solid #222;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .script-box:hover {
-            border-color: #ff0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
         }
 
         code {
             display: block;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #ff4d4d;
             word-break: break-all;
-            text-align: left;
-            line-height: 1.4;
+            text-align: center;
         }
 
-        /* Botón de Acción */
         .btn-copy {
             background: #fff;
             color: #000;
@@ -105,19 +117,7 @@
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .btn-copy:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-copy:active {
-            transform: scale(0.96);
+            transition: 0.3s;
         }
 
         .btn-copy.copied {
@@ -125,13 +125,11 @@
             color: #fff;
         }
 
-        .footer-tag {
+        .footer {
             margin-top: 25px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
+            letter-spacing: 1px;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -142,35 +140,45 @@
     <div class="main-container">
         <div class="logo-area">E</div>
         <h1>Elite Hub <span style="color: #ff0000;">V6</span></h1>
-        <p class="description">Aimbot Universal Edition</p>
+        
+        <div class="lang-switcher">ESP 🇪🇸 | ENG 🇺🇸</div>
+
+        <div class="description-box">
+            <div class="lang-col">
+                <h3>Español</h3>
+                <p>Aimbot Universal con Wall Check, Suavizado y Visuales ESP de alto rendimiento.</p>
+            </div>
+            <div class="lang-col">
+                <h3>English</h3>
+                <p>Universal Aimbot with Wall Check, Smoothing, and High-Performance ESP Visuals.</p>
+            </div>
+        </div>
 
         <div class="script-box">
             <code id="loadstring">loadstring(game:HttpGet("https://raw.githubusercontent.com/fek7-Debug/Elite-hub-aimbot/refs/heads/main/main.lua"))()</code>
         </div>
 
         <button class="btn-copy" id="copyBtn" onclick="doCopy()">
-            COPIAR LOADSTRING
+            COPIAR SCRIPT / COPY SCRIPT
         </button>
 
-        <div class="footer-tag">Project by fek7-debug • 2026</div>
+        <div class="footer">ELITE HUB TEAM • 2026 • UNDETECTED</div>
     </div>
 
     <script>
         function doCopy() {
             const code = document.getElementById('loadstring').innerText;
             const btn = document.getElementById('copyBtn');
-            
             navigator.clipboard.writeText(code);
             
-            btn.innerText = "¡COPIADO!";
+            btn.innerText = "¡COPIADO! / COPIED!";
             btn.classList.add('copied');
             
             setTimeout(() => {
-                btn.innerText = "COPIAR LOADSTRING";
+                btn.innerText = "COPIAR SCRIPT / COPY SCRIPT";
                 btn.classList.remove('copied');
             }, 2000);
         }
     </script>
 </body>
 </html>
-
