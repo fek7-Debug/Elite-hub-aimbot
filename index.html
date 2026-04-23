@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Hub V6</title>
+    <title>Elite Hub | Universal Aimbot</title>
     <style>
         body {
             background-color: #050505;
@@ -32,23 +32,25 @@
             background: #0d0d0d;
             border: 1px solid #1f1f1f;
             border-radius: 30px;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
             box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            border-top: 2px solid #ff0000;
         }
 
         .logo-area {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background: linear-gradient(135deg, #ff0000, #550000);
-            border-radius: 18px;
+            border-radius: 20px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+            font-weight: 900;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+            color: #fff;
         }
 
         h1 {
@@ -62,20 +64,24 @@
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Caja de Script Estilo Moderno */
         .script-box {
-            background: #141414;
+            background: #000;
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 25px;
             border: 1px solid #222;
             transition: 0.3s;
+            position: relative;
         }
 
         .script-box:hover {
             border-color: #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
         }
 
         code {
@@ -85,7 +91,7 @@
             color: #ff4d4d;
             word-break: break-all;
             text-align: left;
-            opacity: 0.8;
+            line-height: 1.4;
         }
 
         /* Botón de Acción */
@@ -102,12 +108,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
             transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
+        .btn-copy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
         .btn-copy:active {
-            transform: scale(0.95);
+            transform: scale(0.96);
         }
 
         .btn-copy.copied {
@@ -121,8 +131,10 @@
             color: #333;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: bold;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="bg-dots"></div>
@@ -130,17 +142,17 @@
     <div class="main-container">
         <div class="logo-area">E</div>
         <h1>Elite Hub <span style="color: #ff0000;">V6</span></h1>
-        <p class="description">Universal Aimbot & Combat Suite</p>
+        <p class="description">Aimbot Universal Edition</p>
 
         <div class="script-box">
-            <code id="loadstring">loadstring(game:HttpGet("https://raw.githubusercontent.com/fek7-Debug/Elitehub/refs/heads/main/main.lua"))()</code>
+            <code id="loadstring">loadstring(game:HttpGet("https://raw.githubusercontent.com/fek7-Debug/Elite-hub-aimbot/refs/heads/main/main.lua"))()</code>
         </div>
 
         <button class="btn-copy" id="copyBtn" onclick="doCopy()">
             COPIAR LOADSTRING
         </button>
 
-        <div class="footer-tag">Verified by fek7-debug</div>
+        <div class="footer-tag">Project by fek7-debug • 2026</div>
     </div>
 
     <script>
@@ -161,3 +173,4 @@
     </script>
 </body>
 </html>
+
